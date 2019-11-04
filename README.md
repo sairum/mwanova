@@ -18,22 +18,26 @@ compute Cochran's C probabilities.
 
 Installation of mwanova is straightforward. First unpack the source using
 
-` $ tar zxf mwanova-version.tar.gz`
+`$ tar zxf mwanova-version.tar.gz`
 	
 This will make a directory called mwanova-<version> with the source code inside. Just cd into mwanova-<version>
 
-> $ cd mwanova-version
+`$ cd mwanova-version`
    
 To compile and install mwanova type
-> autoreconf --install
-> ./configure
-> make
-> make install
 
+`> autoreconf --install`
+`> ./configure`
+`> make`
+`> make install`
+
+Optionally you can configure mwanova to compile as a CGI executable with 
+
+`> ./configure --enable-gci`
 
 and the manual in /usr/local/man/man1 typing
 
-> make install-man
+`> make install-man`
 
 (you should do this as root).
 
@@ -46,42 +50,43 @@ The algorithm is a bit complex. I'm no professional programmer or statistician. 
 
 In the directory data, an example of a data file and model file will produce the following results:
 
-># mwanova -f Data/data.dat
+`> mwanova -f Data/data.dat`
 
+```
+------------------------ ANOVA RESULTS ---------------------------------
+Source of Variation        SS  DF          MS           F       P  Against 
+------------------------------------------------------------------------
+F1                     46.482   1      46.482       7.345   0.019  Residual
+F2                      0.082   1       0.082       0.013   0.911  Residual
+F1xF2                  11.207   1      11.207       1.771   0.208  Residual
+F3                      4.148   2       2.074       0.328   0.727  Residual
+F1xF3                   8.651   2       4.325       0.684   0.523  Residual
+F2xF3                   0.766   2       0.383       0.061   0.942  Residual
+F1xF2xF3                1.486   2       0.743       0.117   0.890  Residual
+Residual               75.940  12       6.328
+------------------------------------------------------------------------
+TOTAL                 148.760  23   
+```         
 
->------------------------ ANOVA RESULTS ---------------------------------
->Source of Variation        SS  DF          MS           F       P  Against 
->------------------------------------------------------------------------
->F1                     46.482   1      46.482       7.345   0.019  Residual
->F2                      0.082   1       0.082       0.013   0.911  Residual
->F1xF2                  11.207   1      11.207       1.771   0.208  Residual
->F3                      4.148   2       2.074       0.328   0.727  Residual
->F1xF3                   8.651   2       4.325       0.684   0.523  Residual
->F2xF3                   0.766   2       0.383       0.061   0.942  Residual
->F1xF2xF3                1.486   2       0.743       0.117   0.890  Residual
->Residual               75.940  12       6.328
->------------------------------------------------------------------------
->TOTAL                 148.760  23   
-           
 If you find the program useful, please e-mail me telling so. Don't forget to cite it if you use mwanova in any published paper... thanks, and enjoy it. 
 
 ## DONE TO DO's
 
-* 1 - Handling of missing data automatically!
+- [x] Handling of missing data automatically!
 
-* 2 - Multiple comparison tests (Tukey, SNK, Schaffe) included in the program!
+- [x] Multiple comparison tests (Tukey, SNK, Schaffe) included in the program!
 
-* 3 - Better ANOVA table with terms ordered by importance (main factors, first order interactions, etc).
+- [x] Better ANOVA table with terms ordered by importance (main factors, first order interactions, etc).
     
-* 4 - Incorporated probability functions in the program!
+- [x] Incorporated probability functions in the program!
         
 ## STILL TO DO (if I can find some time to...)
 
-* 1 - Handling of "Non-Testable" F-Ratios automatically
+- [ ] Handling of "Non-Testable" F-Ratios automatically
 
-* 2 - Compute asymmetrical designs (not unbalanced data-sets!). Several experiments demand crossed factors and a single external control, not crossed or nested in the other factors. I must understand this first, because I only know how to compute this for a one-way ANOVA (but it is extensible to more factors).
+- [ ] Compute asymmetrical designs (not unbalanced data-sets!). Several experiments demand crossed factors and a single external control, not crossed or nested in the other factors. I must understand this first, because I only know how to compute this for a one-way ANOVA (but it is extensible to more factors).
 
-* 3 - Compute BACI (Before-After, Control versus Impact) designs... Very useful when dealing with impact assessment data. Guess this is not easy...
+- [ ] Compute BACI (Before-After, Control versus Impact) designs... Very useful when dealing with impact assessment data. Guess this is not easy...
 
 ## License
 Copyright (C) 2001  Antonio Santos (amsantos@fc.up.pt)
