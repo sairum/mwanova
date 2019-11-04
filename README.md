@@ -22,7 +22,7 @@ Installation of mwanova is straightforward. First unpack the source using
 	
 This will make a directory called mwanova-<version> with the source code inside. Just cd into mwanova-<version>
 
-> cd mwanova-<version>
+> $ cd mwanova-<version>
    
 To compile and install mwanova type
 > autoreconf --install
