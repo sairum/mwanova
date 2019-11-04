@@ -2,17 +2,16 @@
 
 **mwanova** is a simple program to compute analysis of variance. It is distributed under the GNU General Public License. You should read the file COPYING before installing and running mwanova.
 
-Before compiling take a look at the Makefile and *conf.h* and redefine any variables you need. Most of them control the sizes of static variables for data and computed values. Be careful if you need to change them.
+Before compiling take a look at *conf.h* and redefine any variables you need. Most of them control the sizes of static variables for data and computed values. Be careful if you need to change them.
 
-This version of mwanova is a revision of the former mwanova-1.1, including an almost complete rewrite of the code which abolished some of its previous limitations (and introduced some bugs). mwanova has still some limitations as any other piece of software. First of all, it  can only deal with as much as 10 factors. I can hardly imagine an experiment with 10 or more factors, but if you need one, just change the definitions MAXFACTORS in the conf.h file (hope you have enough RAM for that...).
+This version of **mwanova** is a revision of the former mwanova-1.1, including an almost complete rewrite of the code which abolished some of its previous limitations (and introduced some bugs). **mwanova** has still some limitations as any other piece of software. First of all, it  can only deal with as much as 10 factors. I can hardly imagine an experiment with 10 or more factors, but if you need one, just change the definitions MAXFACTORS in the *conf.h* file (hope you have enough RAM for that...).
 
-The maximum number of data values (MAXDATA), levels per factor (MAXLEVELS) and combinations (COMBINS) have been eliminated. COMBINS is still used but it does not limit the analysis up to 10 factors. Previously, COMBINS was the size of an array of all possible factor combinations for a 10 factor analysis, and was set to 1024. An analysis with 11 factors would have 2048 combinations and was only
-possible if this constant was set to 2048. The current version of mwanova  creates a dynamically linked list of terms and the only limitation is RAM. However, COMBINS is still used to compute some string sizes to accommodate variance estimates of terms used in Cornfield-Tukey Rules. If you want to test a model with more than 10 *random* factors you should consider reading *model.cpp* and changing the value of COMBINS in  *conf.h*. Note that this is only true for an analysis with RANDOM factors. An analysis of 20 FIXED factors is easily accomplished by mwanova (well, it takes a while) without any change of COMBINS (but you must change MAXFACTORS).
+The maximum number of data values (*MAXDATA*), levels per factor (*MAXLEVELS*) and combinations (*COMBINS*) have been eliminated. *COMBINS* is still used but it does not limit the analysis up to 10 factors. Previously, *COMBINS* was the size of an array of all possible factor combinations for a 10 factor analysis, and was set to 1024. An analysis with 11 factors would have 2048 combinations and was only
+possible if this constant was set to 2048. The current version of **mwanova**  creates a dynamically linked list of terms and the only limitation is RAM. However, *COMBINS* is still used to compute some string sizes to accommodate variance estimates of terms used in Cornfield-Tukey Rules. If you want to test a model with more than 10 *random* factors you should consider reading *model.cpp* and changing the value of *COMBINS* in  *conf.h*. Note that this is only true for an analysis with RANDOM factors. An analysis of 20 FIXED factors is easily accomplished by mwanova (well, it takes a while) without any change of *COMBINS* (but you must change *MAXFACTORS*).
 
-Another thing that was in the TO DO list is now fully supported in **mwanova**: to automatically handle missing data! However, missing level combinations are not allowed...
+**mwanova** can now handle automatically missing data! However, missing level combinations are not allowed...
 
-**mwanova** does not depend anymore on external libraries for computation  of probabilities. This was possible thanks to Daniel A. Atkinson who developed CCMATH, an excellent library from where portions of code were grabbed. These reside in "probs.cpp". Igor Baskir also contributed with an algorithm to
-compute Cochran's C probabilities.
+**mwanova** does not depend anymore on external libraries for computation  of probabilities. This was possible thanks to Daniel A. Atkinson who developed CCMATH, an excellent library from where portions of code were grabbed. These reside in "probs.cpp". Igor Baskir also contributed with an algorithm to compute Cochran's C probabilities.
 
 ## Installation
 
@@ -42,11 +41,11 @@ and the manual in /usr/local/man/man1 typing
 (you should do this as root).
 
 
-This is the second public release of mwanova, and since I have several minor versions (I started it in 1996), I have named it version 2.0. This version is a beta release. I've fixed all the bugs I was able to detect, but probably there are many more. If you find a bug, don't hesitate, and e-mail me. Suggestions are also welcome.
+This is the second public release of mwanova, and since I have several minor versions (I started it in 1996), I have named it version 2.0. This version is a beta release. I've fixed all the bugs I was able to detect, but probably there are many more. If you find a bug, don't hesitate, and e-mail me. Suggestions are also welcome. Note, however, that I don't guarantee a reply. Currently, I have not much time to do bug fixes. The code is available, you know...
 
-I've only tested mwanova in a Linux system, because I couldn't find a C++ compiler in our HP-UX... if you port the program to other architectures please tell me.
+I've only tested **mwanova** in a Linux system, because I couldn't find a C++ compiler in our HP-UX... if you port the program to other architectures please tell me.
 
-The algorithm is a bit complex. I'm no professional programmer or statistician. I don't have a clue of matrix algebra, but probably most things should have been done using matrixes. Anyway, mwanova works, and it works fine for me. I've compared its results with the results from some commercial packages and everything was OK (I've only tested fully orthogonal  and fully nested models, but as mixed models can be derived from orthogonal models, I did also some tests for mixed models and they were all OK). Now mwanova must pass through all other possible combinations of data and models, and this is only possible if several different people use it.
+The algorithm is a bit complex. I'm no professional programmer or statistician. I don't have a clue of matrix algebra, but probably most things should have been done using matrixes. Anyway, mwanova works, and it works fine for me. I've compared its results with the results from some commercial packages and everything was OK (I've only tested fully orthogonal and fully nested models, but as mixed models can be derived from orthogonal models, I did also some tests for mixed models and they were all OK). Now mwanova must pass through all other possible combinations of data and models, and this is only possible if several different people use it.
 
 In the directory data, an example of a data file and model file will produce the following results:
 
