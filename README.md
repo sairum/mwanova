@@ -1,20 +1,4 @@
 # mwanova - Multi-Way Analysis of Variance.
-// Copyright (C) 2001  Antonio Santos (amsantos@fc.up.pt)
-//
-// This program is free software; you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation; either version 2 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-//
 
 **mwanova** is a simple program to compute analysis of variance. It is distributed under the GNU General Public License. You should read the file COPYING before installing and running mwanova.
 
@@ -34,22 +18,22 @@ compute Cochran's C probabilities.
 
 Installation of mwanova is straightforward. First unpack the source using
 
-># tar zxf mwanova-<version>.tar.gz
+> tar zxf mwanova-<version>.tar.gz
 	
 This will make a directory called mwanova-<version> with the source code inside. Just cd into mwanova-<version>
 
-># cd mwanova-<version>
+> cd mwanova-<version>
    
 To compile and install mwanova type
-># autoreconf --install
-># ./configure
-># make
-># make install
+> autoreconf --install
+> ./configure
+> make
+> make install
 
 
 and the manual in /usr/local/man/man1 typing
 
-># make install-man
+> make install-man
 
 (you should do this as root).
 
@@ -98,5 +82,15 @@ If you find the program useful, please e-mail me telling so. Don't forget to cit
 * 2 - Compute asymmetrical designs (not unbalanced data-sets!). Several experiments demand crossed factors and a single external control, not crossed or nested in the other factors. I must understand this first, because I only know how to compute this for a one-way ANOVA (but it is extensible to more factors).
 
 * 3 - Compute BACI (Before-After, Control versus Impact) designs... Very useful when dealing with impact assessment data. Guess this is not easy...
+
+## License
+Copyright (C) 2001  Antonio Santos (amsantos@fc.up.pt)
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+
 
 
