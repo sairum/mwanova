@@ -1,0 +1,63 @@
+2003-11-07  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (SUBDIRS): Add m4.
+	(ACLOCAL_AMFLAGS): New variable.
+	(EXTRA_DIST): New variable.
+	* configure.in (AC_OUTPUT): Add po/Makefile.in,
+
+31-7-2003 Version 2.0.2
+
+Another anoying and hidden bug fixed. This prevented good designs with
+two orthogonal factors nested into another one to be computed. The problem
+was only revealed when the nested factor with the highest number of levels 
+was entered in a column before the other nested factor and not the other
+way...
+
+7-6-2001 Version 2.0.1
+
+A "hidden" bug was found! This affected seriously the final results
+but only if the data included a nested factor with more than 10 levels
+and observations were entered in an unordered way. Ordered datasets
+were immune to the bug. The  problem was in the algorithm used to
+orthogonalize the data. A new algorithm, with recursive functions
+(which I was avoiding) seems to be working properly with any type of
+datasets.
+
+Another minor bug was found in the functions which compute the
+Cornfield-Tukey rules. In some very particular cases (complex mixed models) some terms had no tests when, in fact, there were tests for them. 
+
+24-5-2001 Version 2.0
+
+SNK tests added. Homogeneity tests now include exact probabilities
+thanks to Igor Baskir who has provided a way to compute Cochran's C
+probabilities. F and Chi-square probabilities do not depend anymore
+on external libraries. The code to compute such probabilities was
+grabbed from CCMATH, developed by Daniel A. Atkinson to whom I also
+want to thank.
+
+29-3-2001 Version 2.0-pre1
+
+Complete rewrite of code. Most things are now handled dynamically.
+Multiple comparison tests included. Handling of missing data included.
+Input files now contain all information about the model... no more
+model files.
+
+19-6-1999 Version 1.1
+
+Fixed a bug in means.cpp which prevented mwanova from computing
+means tables for more than 5 factors!
+
+Fixed a small bug in CT Rules related with mixed models. For some mixed
+models, where a factor was nested in another but orthogonal to a third
+one, mwanova produced a correct CT Table but displayed non-testable
+F ratios when there was, in fact, a test.
+
+Fixed a small problem in Makefile related with the absence of libprob
+
+20-1-1999 Version 1.0
+
+Option -a now produces a table that also includes variance estimates
+for each average.
+
+Option -a now produces some Homosdeascity tests but no probabilities, because
+there are no Hartley's Fmax, Cochran's C, etc probs in the net.
