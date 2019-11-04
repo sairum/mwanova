@@ -26,8 +26,11 @@ This will make a directory called mwanova-<version> with the source code inside.
 To compile and install mwanova type
 
 `> autoreconf --install`
+
 `> ./configure`
+
 `> make`
+
 `> make install`
 
 Optionally you can configure mwanova to compile as a CGI executable with 
