@@ -1,0 +1,14 @@
+autom4te.cache/ 
+config/
+aclocal.m4
+config.*
+configure
+Makefile
+Makefile.in
+stamp-h1
+*~
+src/.deps/
+src/Makefile.in
+src/Makefile
+src/*.o
+src/mwanova
