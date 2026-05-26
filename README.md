@@ -1,3 +1,6 @@
+
+## *This repository was moved to Codeberg*
+
 # mwanova - Multi-Way Analysis of Variance.
 
 **mwanova** is a simple program to compute analysis of variance. It is distributed under the GNU General Public License. You should read the file COPYING before installing and running mwanova.
